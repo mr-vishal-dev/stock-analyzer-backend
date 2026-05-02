@@ -196,7 +196,7 @@ app.post('/api/users/:email/save-stock', async (req, res) => {
 // Proxy for ML Stock Recommender API
 app.post('/api/recommend', async (req, res) => {
   try {
-    const response = await fetch('http://localhost:8000/recommend', {
+    const response = await fetch(`${process.env.API}/recommend`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
